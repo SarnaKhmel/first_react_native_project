@@ -1,21 +1,17 @@
 import React from 'react';
 import {Footer, FooterTab, Button, Text} from 'native-base';
+import {MODES} from "../constants";
 
-const AppFooter = () => (
+const AppFooter = ({mode = MODES.ARTICLES}) => (
     <Footer>
         <FooterTab>
-            <Button active>
-                <Text>
-                    States
-                </Text>
+            <Button active = {mode === MODES.ARTICLES}>
+                <Text>Статьи</Text>
             </Button>
-            <Button>
-                <Text>
-                    Podcasts
-                </Text>
+            <Button active = {mode === MODES.PODCAST}>
+                <Text>Подкасты</Text>
             </Button>
         </FooterTab>
     </Footer>
 );
-
 export default AppFooter;
